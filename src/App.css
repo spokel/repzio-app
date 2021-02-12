@@ -11,6 +11,10 @@ p {
   margin: 0;
 }
 
+hr {
+  
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;

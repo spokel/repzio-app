@@ -1,5 +1,7 @@
 import React from 'react';
-import { getCroppedImageUrl } from '../../Utils/Helpers';
+import { useHistory } from 'react-router-dom';
+import { getTransformedUrl } from '../../Utils/Helpers';
+
 import './styles.css';
 
 const Thumbnail = ({ 
@@ -7,22 +9,33 @@ const Thumbnail = ({
   width, 
   expandProductDetails 
 }) => {
-  const cropValue = getCroppedImageUrl(product);
+  const history = useHistory();
+  const url = getTransformedUrl(product);
+
+  function handleClick() {
+    expandProductDetails(product)
+    history.push(`product/${product.ItemID}`)
+  }
 
   return (
     <div 
       className='product-thumbnail'
-      onClick={() => expandProductDetails(product)}
+      onClick={() => handleClick()}
       onKeyPress={(e) => {
-        if (e.code === 'Enter') expandProductDetails(product)
+        if (e.code === 'Enter') handleClick()
       }}
       tabIndex='0'
     >
-      <div>{product.ItemName}</div>
-      <img 
-        src={`${product.PhotoName}?width=${width}${cropValue}`} 
-        alt={product.Description} 
-      />
+      <div className='product-image'> 
+        <img 
+          src={url} 
+          alt={product.Description} 
+        />
+      </div>
+      <div className='product-info'>
+        <p className='product-name'>{product.ItemName}</p>
+        <p>$ {product.BasePrice}</p>
+      </div>
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from '../../assets/repzio-logo.jpg';
 
 import './styles.css';
@@ -10,13 +9,8 @@ const Header = () => {
       <div>
         <img src={logo} className='logo' alt='repzio logo' />
       </div>
-      <div className='header-info-right'>
-        <h1>RepZio</h1>
-        <div className='header-cart-container'> 
-          <div className='header-cart'>
-            <FontAwesomeIcon icon='cart-plus' />
-          </div>
-        </div>
+      <div className='header-rep-info'>
+        <p>Max Fraser - Max@repzio.com</p>
       </div>
     </div>
   )

@@ -1,0 +1,33 @@
+.products-container .header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.products-container .header-container > h1 {
+  color: #555555;
+}
+
+.products-container .header-container > div {
+  width: 90%;
+  color: #888888;
+}
+
+.products-container .header-container p {
+  margin-bottom: 12px;
+}
+
+@media (min-width: 960px) {
+  .products-container .header-container > div {
+    font-size: 1.1rem;
+  }
+}
+
+.products-container .header-container .hr {
+  width: 5%;
+  height: 1.5px;
+  margin: 12px;
+  background-color: #555555;
+}

@@ -1,11 +1,12 @@
 import React, { useRef, useEffect } from 'react';
-import ProductDetailsFooter from './ProductDetailsFooter';
+import { useHistory } from 'react-router-dom';
 import ProductDetails from './ProductDetails';
-import { getCroppedImageUrl } from '../Utils/Helpers';
+import { getTransformedUrl } from '../Utils/Helpers';
 
 import '../Layout/Products/styles.css';
 
-const ProductDialog = ({ isOpen, setisDialogOpen, product }) => {
+const SingleProduct = ({ setisDialogOpen, product }) => {
+  const history = useHistory();
   const wrapperRef = useRef(null);
 
   useEffect(() => {
@@ -20,34 +21,27 @@ const ProductDialog = ({ isOpen, setisDialogOpen, product }) => {
 
   function handleOutsideClick(event) {
     if (wrapperRef.current && wrapperRef.current == event.target) {
-      setisDialogOpen(false);
+      history.push('/');
     }
   }
 
   function handleKeyDown(event) {
     if (event.code === 'Escape') {
-      setisDialogOpen(false);
+      history.push('/');
     }
   }
 
-  if (isOpen) {
-    const url = getCroppedImageUrl(product);
+  const url = getTransformedUrl(product);
 
-    return (
-      <div 
-        className='dialog-wrapper' 
-        ref={wrapperRef} 
-        onClick={(e) => handleOutsideClick(e)}
-      >
-        <div className='dialog-container'>
-          <ProductDetails url={url} product={product} />
-          <ProductDetailsFooter />
-        </div>
-      </div>
-    )
-  }
-
-  return null;
+  return (
+    <div 
+      className='single-product' 
+      ref={wrapperRef} 
+      onClick={(e) => handleOutsideClick(e)}
+    >
+      <ProductDetails url={url} product={product} />
+    </div>
+  )
 }
 
-export default ProductDialog;
+export default SingleProduct;

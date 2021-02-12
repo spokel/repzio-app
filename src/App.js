@@ -1,9 +1,5 @@
 import React from 'react';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { 
-  faBars, faUserCircle, faShoppingBag, faHeart, faCartPlus 
-} from '@fortawesome/free-solid-svg-icons';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import Header from './Layout/Header';
 import Products from './Layout/Products';
@@ -13,14 +9,14 @@ import './App.css';
 
 function App() {
   return (
-    <div className='wrapper'>
-      <Header />
-      <Products />
-      <Footer />
-    </div>
+    <Router>
+      <div className='wrapper'>
+        <Header />
+        <Products />
+        <Footer />
+      </div>
+    </Router>
   )
 }
-
-library.add(fab, faBars, faUserCircle, faShoppingBag, faHeart, faCartPlus);
 
 export default App;

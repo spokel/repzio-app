@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import data from '../../constants/data.json';
-import ProductDialog from '../../components/ProductDialog';
+import SingleProduct from '../../components/SingleProduct';
 import Thumbnail from '../../components/Thumbnail';
+import Header from './components/Header';
+import AllProducts from './components/AllProducts';
 
 import './styles.css';
 
@@ -14,32 +17,35 @@ const Products = () => {
     setExpandedProduct(selectedProduct);
   }
 
-  const getProducts = () => (
-    data && data.items.map(product => (
-      <Thumbnail 
-        key={product.ProductID}
-        product={product} 
-        width='110'
-        expandProductDetails={expandProductDetails}
-      />
-    ))
-  )
-
   return (
     <main id='main-content'>
       <div className='products-container'>
-        <div className='products-header'>
-          <h1>Products</h1>
-        </div>
+        <Header />
+
         <div className='products'>
-          {getProducts()}
+          <Switch>
+            <Route 
+              exact
+              path='/' 
+              render={() => 
+                <AllProducts
+                  data={data} 
+                  expandProductDetails={expandProductDetails}
+                />} 
+            />
+            <Route 
+              exact
+              path='/product/:id'
+              render={() => 
+                <SingleProduct 
+                  product={expandedProduct} 
+                  setisDialogOpen={setisDialogOpen}
+                />
+              } 
+            />
+          </Switch>
         </div>
 
-        <ProductDialog 
-          isOpen={isDialogOpen}
-          setisDialogOpen={setisDialogOpen}
-          product={expandedProduct}
-        />
       </div>
     </main>
   )
