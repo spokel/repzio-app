@@ -4,9 +4,8 @@
   justify-content: center;
   flex: 1 1 33%;
   border-radius: 4px;
-  max-width: 220px;
+  max-width: 320px;
   padding-bottom: 4px;
-  margin-right: 24px;
   margin-bottom: 24px;
   cursor: pointer;
 }
@@ -29,5 +28,23 @@
 }
 
 .product-thumbnail .product-name {
+  color: #555555;
   font-weight: bold;
+}
+
+.product-thumbnail .product-price {
+  color: #888888;
+}
+
+@media (min-width: 520px) {
+  .product-thumbnail {
+    margin-right: 24px;
+  }
+}
+
+@media (min-width: 900px) {
+  .product-thumbnail {
+    max-width: 280px;
+    margin-right: 24px;
+  }
 }

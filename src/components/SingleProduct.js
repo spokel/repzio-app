@@ -5,7 +5,7 @@ import { getTransformedUrl } from '../Utils/Helpers';
 
 import '../Layout/Products/styles.css';
 
-const SingleProduct = ({ setisDialogOpen, product }) => {
+const SingleProduct = ({ product }) => {
   const history = useHistory();
   const wrapperRef = useRef(null);
 

@@ -1,12 +1,11 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { getTransformedUrl } from '../../Utils/Helpers';
+import { getTransformedUrl, getFullPrice } from '../../Utils/Helpers';
 
 import './styles.css';
 
 const Thumbnail = ({ 
   product,
-  width, 
   expandProductDetails 
 }) => {
   const history = useHistory();
@@ -34,7 +33,7 @@ const Thumbnail = ({
       </div>
       <div className='product-info'>
         <p className='product-name'>{product.ItemName}</p>
-        <p>$ {product.BasePrice}</p>
+        <p className='product-price'>$ {getFullPrice(product.BasePrice)}</p>
       </div>
     </div>
   )

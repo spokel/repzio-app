@@ -10,7 +10,7 @@
   color: #555555;
 }
 
-.products-container .header-container > div {
+.products-container .header-container .header-text {
   width: 90%;
   color: #888888;
 }
@@ -19,9 +19,21 @@
   margin-bottom: 12px;
 }
 
+@media (min-width: 568px) {
+  .products-container .header-container .header-text {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .products-container .header-container .header-text {
+    font-size: 1.5rem;
+  }
+}
+
 @media (min-width: 960px) {
-  .products-container .header-container > div {
-    font-size: 1.1rem;
+  .products-container .header-container .header-text {
+    font-size: 1.7rem;
   }
 }
 

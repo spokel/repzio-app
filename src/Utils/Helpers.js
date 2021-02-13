@@ -14,3 +14,16 @@ export function getTransformedUrl(product) {
 
   return `${product.PhotoName}${cropValue}${widthValue}`;
 }
+
+export function getFullPrice(price) {
+  let fullPrice = price.toString();
+
+  if (fullPrice.length === 3) {
+    fullPrice = fullPrice.concat('.00');
+  }
+  else if (fullPrice.length === 5) {
+    fullPrice = fullPrice.concat('0');
+  }
+
+  return fullPrice;
+}
