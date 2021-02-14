@@ -12,8 +12,8 @@ const Thumbnail = ({
   const url = getTransformedUrl(product);
 
   function handleClick() {
-    expandProductDetails(product)
-    history.push(`product/${product.ItemID}`)
+    expandProductDetails(product);
+    history.push(`product/${product.ItemID}`);
   }
 
   return (

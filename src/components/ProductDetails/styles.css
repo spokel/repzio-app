@@ -1,82 +1,80 @@
-.single-product {
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
-  text-align: left;
-  color: #555555;
-}
-
-@media (min-width: 700px) {
-  .single-product {
-    width: 80%;
-    margin: auto;
-  }
-}
-
 @media (min-width: 700px) {
   .single-product .product-details-container {
     display: flex;
     justify-content: center;
-    margin-top: 24px;
   }
 }
 
 .single-product img {
-  max-width: 200px;
+  max-width: 15rem;
 }
 
-.single-product .product-image-container {
-  background-color: #fff;
+/** For Galaxy Fold or any other tiny screens */
+@media (min-width: 320px) {
+  .single-product img {
+    max-width: 20rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .single-product img {
+    width: 100%;
+    min-width: 12rem;
+  }
+}
+
+.single-product .product-image {
   display: flex;
   justify-content: center;
-  padding-bottom: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+  padding: 0.25rem 0;
+  background-color: #fff;
   box-shadow: 1px 1px 2px 0 lightgrey;
 }
 
 @media (min-width: 700px) {
-  .single-product .product-image-container {
-    width: 45%;
-    max-width: 340px;
-    margin-right: 32px;
+  .single-product .product-image {
+    margin: 0 2rem 0 1rem;
+    padding: 0.5rem 3.75rem;
   }
 }
 
 .single-product .product-link-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 24px;
-  font-size: 0.8rem;
-  padding: 0 12px;
+  margin: 0 1.75rem 1.5rem 1.75rem;
+  font-size: 0.9rem;
 }
 
 @media (min-width: 700px) {
   .single-product .product-link-container {
-    width: 85%;
     justify-content: flex-start;
-    margin: auto;
+    margin: 0 1rem 1.5rem 0;
   }
 }
 
 .single-product .product-link {
-  margin-right: 24px;
+  margin-right: 1.5rem;
   color: #555555;
   text-decoration: underline;
 }
 
 @media (min-width: 700px) {
   .single-product .product-link {
-    margin-right: 8px;
+    margin-right: 0.5rem;
   }
 }
 
 .single-product .product-details {
+  margin: 0 0.625rem;
+  font-size: 1.1rem;
   text-align: center;
 }
 
 @media (min-width: 700px) {
   .single-product .product-details {
-    width: 50%;
+    width: 75%;
+    margin-top: 2.3rem;
     text-align: unset;
   }
 }
@@ -85,40 +83,34 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 4px 8px 4px;
-  margin-bottom: 16px;
+  margin-bottom: 1.4rem;
 }
 
-.single-product .product-header > p {
-  margin-bottom: 6px;
-}
-
-.single-product .product-value.product-name {
-  font-size: 1.2rem;
+.single-product .product-name {
+  margin-bottom: 0.35rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
-.single-product .product-value.product-price {
-  font-size: 1.6rem;
+@media (min-width: 700px) {
+  .single-product .product-name {
+    font-size: 1.2rem;
+  }
+}
+
+.single-product .product-price {
+  margin-bottom: 0.35rem;
+  font-size: 2rem;
   color: darkgray;
 }
 
 .single-product .product-description {
-  margin: 0 8px 20px 8px;
-  padding: 0 4px;
-}
-
-@media (min-width: 700px) {
-  .single-product .product-description {
-    margin: 0 8px 20px 0;
-  }
+  margin-bottom: 1.4rem;
 }
 
 .single-product .product-dimensions {
   display: flex;
   justify-content: center;
-  padding: 0 4px;
-  font-size: 0.9rem;
 }
 
 @media (min-width: 700px) {

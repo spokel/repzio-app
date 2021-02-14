@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import data from '../../constants/data.json';
-import SingleProduct from '../../components/SingleProduct';
+import SingleProduct from './components/SingleProduct';
 import Header from './components/Header';
 import AllProducts from './components/AllProducts';
 
