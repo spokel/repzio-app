@@ -6,7 +6,7 @@
   color: #555555;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 770px) {
   .single-product {
     width: 85%;
     margin: auto;

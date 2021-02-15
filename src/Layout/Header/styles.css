@@ -21,7 +21,7 @@
   width: 5rem;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 770px) {
   .header {
     flex-direction: row;
     padding: 0.5rem 1.5rem;

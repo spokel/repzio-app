@@ -19,3 +19,9 @@
     width: 90%;
   }
 }
+
+@media (min-width: 1690px) {
+  .products {
+    width: 75%;
+  }
+}
