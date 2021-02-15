@@ -19,7 +19,8 @@
 @media (min-width: 700px) {
   .single-product img {
     width: 100%;
-    min-width: 12rem;
+    min-width: 13rem;
+    max-width: 26rem;
   }
 }
 
@@ -41,20 +42,20 @@
 
 .single-product .product-link-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: 0 1.75rem 1.5rem 1.75rem;
   font-size: 0.9rem;
 }
 
 @media (min-width: 700px) {
   .single-product .product-link-container {
-    justify-content: flex-start;
     margin: 0 1rem 1.5rem 0;
+    font-size: 1rem;
   }
 }
 
 .single-product .product-link {
-  margin-right: 1.5rem;
+  margin-right: 0.6rem;
   color: #555555;
   text-decoration: underline;
 }
@@ -67,7 +68,6 @@
 
 .single-product .product-details {
   margin: 0 0.625rem;
-  font-size: 1.1rem;
   text-align: center;
 }
 
@@ -94,13 +94,13 @@
 
 @media (min-width: 700px) {
   .single-product .product-name {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 }
 
 .single-product .product-price {
   margin-bottom: 0.35rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: darkgray;
 }
 
