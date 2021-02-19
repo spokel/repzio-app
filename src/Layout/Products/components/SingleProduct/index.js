@@ -1,12 +1,21 @@
-import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import ProductDetails from '../../../../components/ProductDetails';
 import { getTransformedUrl } from '../../../../Utils/Helpers';
 
 import './styles.css';
 
-const SingleProduct = ({ product }) => {
+const SingleProduct = ({ product: initialProduct, data }) => {
+  const [product, setProduct] = useState(initialProduct);
   const history = useHistory();
+  const { id } = useParams();
+
+  useEffect(() => {
+    if (!product) {
+      const currentProduct = data.items.find(p => p.ItemID === id);
+      setProduct(currentProduct);
+    }
+  }, [])
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown, false);

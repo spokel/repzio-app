@@ -34,6 +34,7 @@ const Products = () => {
               path='/product/:id'
               render={() => 
                 <SingleProduct 
+                  data={data} 
                   product={expandedProduct} 
                 />} 
             />

@@ -23,7 +23,7 @@ export function getTransformedUrl(product) {
 }
 
 export function getFullPrice(price) {
-  let fullPrice = price.toString();
+  let fullPrice = price?.toString() || '';
 
   if (fullPrice.length === 3) {
     fullPrice = fullPrice.concat('.00');
