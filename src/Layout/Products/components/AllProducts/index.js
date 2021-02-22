@@ -1,13 +1,12 @@
 import React from 'react';
 import Thumbnail from '../../../../components/Thumbnail';
 
-const AllProducts = ({ data, expandProductDetails }) => (
+const AllProducts = ({ productsList }) => (
   <div className='products'>
-    {data && data.items.map(product => (
+    {productsList.map(product => (
       <Thumbnail 
         key={product.ProductID}
         product={product}
-        expandProductDetails={expandProductDetails}
       />
     ))}
   </div>

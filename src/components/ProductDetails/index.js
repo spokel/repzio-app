@@ -4,7 +4,7 @@ import { getFullPrice } from '../../Utils/Helpers';
 
 import './styles.css';
 
-const ProductDetails = ({ url, product }) => {
+const ProductDetails = ({ url, product = {} }) => {
   return (
     <div className='product-details-container'>
 

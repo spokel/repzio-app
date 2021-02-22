@@ -5,14 +5,14 @@ import { getTransformedUrl } from '../../../../Utils/Helpers';
 
 import './styles.css';
 
-const SingleProduct = ({ product: initialProduct, data }) => {
-  const [product, setProduct] = useState(initialProduct);
+const SingleProduct = ({ productsList }) => {
+  const [product, setProduct] = useState();
   const history = useHistory();
   const { id } = useParams();
 
   useEffect(() => {
-    if (!product) {
-      const currentProduct = data.items.find(p => p.ItemID === id);
+    if (id) {
+      const currentProduct = productsList.find(p => p.ItemID === id);
       setProduct(currentProduct);
     }
   }, [])
@@ -31,7 +31,7 @@ const SingleProduct = ({ product: initialProduct, data }) => {
     }
   }
 
-  const url = getTransformedUrl(product);
+  const url = product && getTransformedUrl(product);
 
   return (
     <div className='single-product'>

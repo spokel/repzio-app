@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import data from '../../constants/data.json';
 import SingleProduct from './components/SingleProduct';
@@ -8,12 +8,6 @@ import AllProducts from './components/AllProducts';
 import './styles.css';
 
 const Products = () => {
-  const [expandedProduct, setExpandedProduct] = useState('');
-
-  function expandProductDetails(selectedProduct) {
-    setExpandedProduct(selectedProduct);
-  }
-
   return (
     <main id='main-content'>
       <div className='products-container'>
@@ -24,19 +18,15 @@ const Products = () => {
               exact
               path='/' 
               render={() => 
-                <AllProducts
-                  data={data} 
-                  expandProductDetails={expandProductDetails}
-                />} 
+                <AllProducts productsList={data.items} />
+              } 
             />
             <Route 
               exact
               path='/product/:id'
               render={() => 
-                <SingleProduct 
-                  data={data} 
-                  product={expandedProduct} 
-                />} 
+                <SingleProduct productsList={data.items} />
+              } 
             />
           </Switch>
 

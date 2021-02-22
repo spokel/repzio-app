@@ -6,12 +6,10 @@ module.exports = {
   // the app entry point is index.js
   entry: path.resolve(__dirname, 'index.js'),
   output: {
-  	// the output of the webpack build will be in /dist directory
-    // path: path.resolve(__dirname, 'dist'),
+    // the output of the webpack build will be in the home directory
     path: path.resolve(__dirname),
-    // the filename of the JS bundle will be bundle.js
-    filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
+    filename: 'bundle.js'
   },
   devServer: {
     // React Router won't work without this

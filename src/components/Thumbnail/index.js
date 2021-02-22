@@ -4,15 +4,11 @@ import { getTransformedUrl, getFullPrice } from '../../Utils/Helpers';
 
 import './styles.css';
 
-const Thumbnail = ({ 
-  product,
-  expandProductDetails 
-}) => {
+const Thumbnail = ({ product }) => {
   const history = useHistory();
   const url = getTransformedUrl(product);
 
   function handleClick() {
-    expandProductDetails(product);
     history.push(`product/${product.ItemID}`);
   }
 
